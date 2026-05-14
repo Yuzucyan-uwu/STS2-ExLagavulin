@@ -1,0 +1,34 @@
+<Project Sdk="Godot.NET.Sdk/4.5.0">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>sts2mod</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\Desktop\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="GodotSharp">
+      <HintPath>..\..\Desktop\GodotSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="sts2">
+      <HintPath>..\..\Desktop\sts2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EXLagavulin.json" />
+    <Content Include="localization\zhs\encounters.json" />
+    <Content Include="localization\zhs\monsters.json" />
+    <Content Include="localization\zhs\powers.json" />
+    <Content Include="scenes\creature_visuals\lagavulin.tscn" />
+    <Content Include="scenes\creature_visuals\lagavulin_matriarch_act2.tscn" />
+    <Content Include="scenes\encounters\lagavulin_matriarch_act2_boss.tscn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\map\placeholder\" />
+    <Folder Include="images\monsters\" />
+    <Folder Include="images\powers\" />
+    <Folder Include="images\ui\run_history\" />
+  </ItemGroup>
+</Project>

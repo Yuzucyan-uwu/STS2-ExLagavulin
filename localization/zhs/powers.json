@@ -1,0 +1,8 @@
+﻿{
+  "EX_SLEEP_POWER.description": "TODO",
+  "EX_SLEEP_POWER.smartDescription": "在失去生命时或在[blue]{Amount}[/blue]回合后苏醒。",
+  "EX_SLEEP_POWER.title": "沉睡",
+  "SPLIT_POWER.description": "TODO",
+  "SPLIT_POWER.smartDescription": "在死亡时生成两只[gold]乐嘉维林[/gold]。",
+  "SPLIT_POWER.title": "爆裂"
+}

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cuu8yewsr4ml6"]
+
+[node name="Encounter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="matriarch" type="Marker2D" parent="."]
+position = Vector2(1408.4902, 763.8834)
+
+[node name="lagavulin1" type="Marker2D" parent="."]
+position = Vector2(1089.5002, 737.3009)
+
+[node name="lagavulin2" type="Marker2D" parent="."]
+position = Vector2(1438.8702, 744.896)

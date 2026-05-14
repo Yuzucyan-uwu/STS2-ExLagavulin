@@ -1,0 +1,13 @@
+﻿{
+  "LAGAVULIN_MATRIARCH_ACT2.name": "超级乐嘉维林族母",
+  "LAGAVULIN_MATRIARCH_ACT2.title": "超级乐嘉维林族母",
+
+  "LAGAVULIN.name": "乐嘉维林",
+  "LAGAVULIN.title": "乐嘉维林",
+
+  "LAGAVULIN.moves.SLEEP_MOVE1.title": "睡眠",
+  "LAGAVULIN.moves.SLEEP_MOVE2.title": "睡眠",
+  "LAGAVULIN.moves.ATTACK_MOVE.title": "重击",
+  "LAGAVULIN.moves.DEBUFF_MOVE.title": "虚弱诅咒",
+  "LAGAVULIN.moves.MULTI_MOVE.title": "三连刺"
+}

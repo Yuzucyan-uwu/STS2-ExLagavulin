@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc36w54ijbet"]
+
+[ext_resource type="Script" uid="uid://dfcj2fgim480v" path="res://src/Core/Nodes/Combat/NCreatureVisuals.cs" id="1exlaga"]
+[ext_resource type="Texture2D" uid="uid://bvfyxwncim5bk" path="res://images/monsters/lagavulinex.png" id="2exlaga"]
+
+[node name="LagavulinMartriarchAct2" type="Node2D"]
+script = ExtResource("1exlaga")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7.5000305, -178)
+scale = Vector2(0.3350615, 0.28595743)
+texture = ExtResource("2exlaga")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -243.0
+offset_top = -337.0
+offset_right = 241.0
+offset_bottom = -15.0
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(41.307007, -169.22028)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-130.82324, -315.41306)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbsm0eilw0xt1"]
+
+[ext_resource type="Script" uid="uid://dfcj2fgim480v" path="res://src/Core/Nodes/Combat/NCreatureVisuals.cs" id="1laga"]
+[ext_resource type="Texture2D" uid="uid://be7siqsntxu1x" path="res://images/monsters/lagavulin.png" id="2laga"]
+
+[node name="Lagavulin" type="Node2D"]
+script = ExtResource("1laga")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Visuals" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(26.499994, -160.49998)
+scale = Vector2(0.20453157, 0.19346942)
+texture = ExtResource("2laga")
+
+[node name="Bounds" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -357.0
+offset_right = 148.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-4.1655273, -183.17487)
+
+[node name="IntentPos" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(45.961426, -454.6961)
