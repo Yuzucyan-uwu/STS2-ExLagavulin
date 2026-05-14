@@ -38,17 +38,17 @@ public sealed class LagavulinMatriarchAct2 : MonsterModel
 
 	private NSleepingVfx? _sleepingVfx;
 
-	public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 233, 222);
+	public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 277, 268);
 
 	public override int MaxInitialHp => MinInitialHp;
 
-	private int SlashDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 21, 19);
+	private int SlashDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 23, 21);
 
-	private int Slash2Damage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 14, 12);
+	private int Slash2Damage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 17, 15);
 
-	private int Slash2Block => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 14, 12);
+	private int Slash2Block => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 14);
 
-	private int DisembowelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 9);
+	private int DisembowelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 13, 11);
 
 	private int DisembowelRepeat => 2;
 

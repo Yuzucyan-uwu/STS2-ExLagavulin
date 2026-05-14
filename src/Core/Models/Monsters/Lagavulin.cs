@@ -24,32 +24,28 @@ public sealed class Lagavulin : MonsterModel
     public override async Task AfterAddedToRoom()
     {
         await base.AfterAddedToRoom();
-        await PowerCmd.Apply<ExSleepPower>(new ThrowingPlayerChoiceContext(), base.Creature, 2m, base.Creature, null);
     }
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
     {
         var list = new List<MonsterState>();
 
-        var sleep1 = new MoveState("SLEEP1", SleepMove, new SleepIntent());
-        var sleep2 = new MoveState("SLEEP2", SleepMove, new SleepIntent());
+        var stunned = new MoveState("STUNNED", SleepMove, new StunIntent());
         var attack = new MoveState("ATTACK", AttackMove, new SingleAttackIntent(16));
         var debuff = new MoveState("DEBUFF", DebuffMove, new DebuffIntent());
         var multi = new MoveState("MULTI", MultiAttackMove, new MultiAttackIntent(5, 3));
-
-        sleep1.FollowUpState = sleep2;
-        sleep2.FollowUpState = attack;
+        
+        stunned.FollowUpState = attack;
         attack.FollowUpState = debuff;
         debuff.FollowUpState = multi;
         multi.FollowUpState = attack;
 
-        list.Add(sleep1);
-        list.Add(sleep2);
+        list.Add(stunned);
         list.Add(attack);
         list.Add(debuff);
         list.Add(multi);
 
-        return new MonsterMoveStateMachine(list, sleep1);
+        return new MonsterMoveStateMachine(list, stunned);
     }
 
     private Task SleepMove(IReadOnlyList<Creature> targets) => Task.CompletedTask;
