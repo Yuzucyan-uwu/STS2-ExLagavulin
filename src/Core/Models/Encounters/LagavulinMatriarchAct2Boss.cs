@@ -38,7 +38,7 @@ public sealed class LagavulinMatriarchAct2Boss : EncounterModel
         GetLagavulinSlotName(2)
     };
 
-    protected override bool HasCustomBackground => false;   // 先关闭，避免背景报错
+    protected override bool HasCustomBackground => false;
 
     public override float GetCameraScaling() => 0.85f;
     public override Vector2 GetCameraOffset() => Vector2.Down * 70f;
