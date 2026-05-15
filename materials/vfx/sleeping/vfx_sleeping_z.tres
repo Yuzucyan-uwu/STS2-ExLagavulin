@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://c1oc1o2kmcwno"]
 
-[ext_resource type="Shader" uid="uid://c8i8cplik5ci4" path="res://shaders/vfx/sleeping/vfx_sleeping_z_shader.gdshader" id="1_ayr50"]
-[ext_resource type="Texture2D" uid="uid://85fwnqy5tmy0" path="res://images/vfx/sleeping/sleeping_animation.png" id="2_3yrbk"]
+[ext_resource type="Shader" uid="uid://ck3jjf74jv3s2" path="res://shaders/vfx/sleeping/vfx_sleeping_z_shader.gdshader" id="1_ayr50"]
+[ext_resource type="Texture2D" uid="uid://c0xkg6jru5o3j" path="res://images/vfx/sleeping/sleeping_animation.png" id="2_3yrbk"]
 
 [sub_resource type="Curve" id="Curve_3yrbk"]
 _data = [Vector2(0, 0.500442), 0.0, 2.4942, 0, 0, Vector2(0.501199, 1), 0.0, 0.0, 0, 0]

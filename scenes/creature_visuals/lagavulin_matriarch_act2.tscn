@@ -10,29 +10,29 @@ metadata/_edit_lock_ = true
 
 [node name="Visuals" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(7.5000305, -178)
-scale = Vector2(0.3350615, 0.28595743)
+position = Vector2(-10.999996, -219.00002)
+scale = Vector2(0.40699932, 0.35659572)
 texture = ExtResource("2exlaga")
 
 [node name="SleepVfxPos" type="Marker2D" parent="Visuals"]
 unique_name_in_owner = true
 show_behind_parent = true
-position = Vector2(-470.06305, 115.401764)
+position = Vector2(-469.28833, 82.726746)
 
 [node name="Bounds" type="Control" parent="."]
 unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = -243.0
-offset_top = -337.0
-offset_right = 241.0
+offset_left = -303.0
+offset_top = -403.0
+offset_right = 258.0
 offset_bottom = -15.0
 mouse_filter = 2
 
 [node name="CenterPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(41.307007, -169.22028)
+position = Vector2(51.327393, -203.94586)
 
 [node name="IntentPos" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(-130.82324, -315.41306)
+position = Vector2(-199.74692, -369.4267)
