@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LocalizedTexture" load_steps=4 format=3 uid="uid://cnv2aw545syh5"]
+
+[ext_resource type="Texture2D" uid="uid://y5qfr755fhn8" path="res://images/vfx/sleeping/sleeping_z_eng.png" id="1_i3qho"]
+[ext_resource type="Script" uid="uid://dnrg4i1p0jphg" path="res://src/Core/Nodes/Vfx/Utilities/LocalizedTexture.cs" id="1_ihhul"]
+[ext_resource type="Texture2D" uid="uid://cffm6r360wsju" path="res://images/vfx/sleeping/sleeping_z_jpn.png" id="2_7pt1m"]
+
+[resource]
+script = ExtResource("1_ihhul")
+_textures = Dictionary[String, Texture2D]({
+"eng": ExtResource("1_i3qho"),
+"jpn": ExtResource("2_7pt1m")
+})
+metadata/_custom_type_script = "uid://dnrg4i1p0jphg"

@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy3y8lvsfn0ii"]
+
+[ext_resource type="Material" uid="uid://bej6nvwlweuph" path="res://materials/vfx/starry_impact/vfx_starry_impact_small_stars.tres" id="1_p0e5r"]
+[ext_resource type="Texture2D" uid="uid://dmoj7mwbys4pa" path="res://images/vfx/starry_impact/starry_impact_small_star.png" id="2_vlenv"]
+
+[sub_resource type="Curve" id="Curve_o6cpj"]
+_data = [Vector2(0.396825, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2gmb7"]
+curve = SubResource("Curve_o6cpj")
+
+[sub_resource type="Curve" id="Curve_vo6g6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_evy5u"]
+curve = SubResource("Curve_vo6g6")
+
+[sub_resource type="Curve" id="Curve_vcpbd"]
+_data = [Vector2(0, 0), 0.0, 5.53368, 0, 0, Vector2(0.498413, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.92666, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_8mg5p"]
+curve = SubResource("Curve_vcpbd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_24g6d"]
+lifetime_randomness = 0.75
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 75.0
+emission_ring_inner_radius = 25.0
+emission_ring_cone_angle = 90.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+angular_velocity_curve = SubResource("CurveTexture_evy5u")
+radial_velocity_min = 4.99998
+radial_velocity_max = 35.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.2
+scale_max = 0.75
+scale_curve = SubResource("CurveTexture_8mg5p")
+alpha_curve = SubResource("CurveTexture_2gmb7")
+
+[node name="vfx_starry_impact_small_stars" type="GPUParticles2D"]
+z_index = 2
+material = ExtResource("1_p0e5r")
+emitting = false
+amount = 6
+texture = ExtResource("2_vlenv")
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.5
+randomness = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_24g6d")

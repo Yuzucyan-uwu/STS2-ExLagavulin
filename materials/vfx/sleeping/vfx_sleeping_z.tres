@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://c1oc1o2kmcwno"]
+
+[ext_resource type="Shader" uid="uid://c8i8cplik5ci4" path="res://shaders/vfx/sleeping/vfx_sleeping_z_shader.gdshader" id="1_ayr50"]
+[ext_resource type="Texture2D" uid="uid://85fwnqy5tmy0" path="res://images/vfx/sleeping/sleeping_animation.png" id="2_3yrbk"]
+
+[sub_resource type="Curve" id="Curve_3yrbk"]
+_data = [Vector2(0, 0.500442), 0.0, 2.4942, 0, 0, Vector2(0.501199, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qy3ch"]
+curve = SubResource("Curve_3yrbk")
+
+[sub_resource type="Curve" id="Curve_ayr50"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3yrbk"]
+curve = SubResource("Curve_ayr50")
+
+[resource]
+shader = ExtResource("1_ayr50")
+shader_parameter/animation_texture = ExtResource("2_3yrbk")
+shader_parameter/outline_color = Color(0.438902, 0, 0.380391, 1)
+shader_parameter/distortion_strength = 0.075
+shader_parameter/distortion_curve = SubResource("CurveTexture_qy3ch")
+shader_parameter/distortion_speed = Vector2(-0.1, 0.2)
+shader_parameter/erosion_curve = SubResource("CurveTexture_3yrbk")
+shader_parameter/erosion_offset = 0.1

@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://diu73yc5g4pys"]
+
+[ext_resource type="Script" uid="uid://dpl87juyagyoj" path="res://src/Core/Nodes/Vfx/NSleepingVfx.cs" id="1_eavhq"]
+[ext_resource type="PackedScene" uid="uid://cq0m6037hbecy" path="res://scenes/vfx/common/vfx_common_glow.tscn" id="2_2yohs"]
+[ext_resource type="Resource" uid="uid://bp8g7ib18weu0" path="res://images/vfx/sleeping/localized_sleeping_z.tres" id="2_yh2j0"]
+[ext_resource type="PackedScene" uid="uid://b8ktw6gosbusf" path="res://scenes/vfx/starry_impact/vfx_starry_impact_small_stars.tscn" id="3_yh2j0"]
+[ext_resource type="PackedScene" uid="uid://bc5iceb5dw0bm" path="res://scenes/vfx/sleeping/vfx_sleeping_z.tscn" id="4_ohipx"]
+
+[sub_resource type="Curve" id="Curve_facwb"]
+_data = [Vector2(0.396825, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jaokf"]
+curve = SubResource("Curve_facwb")
+
+[sub_resource type="Gradient" id="Gradient_v7qmx"]
+colors = PackedColorArray(2, 2, 2, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_npm28"]
+gradient = SubResource("Gradient_v7qmx")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_dcr57"]
+_data = [Vector2(0, 0), 0.0, 5.53368, 0, 0, Vector2(0.498413, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.92666, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_rqrjl"]
+curve = SubResource("Curve_dcr57")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pa3ay"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 120.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_rqrjl")
+color_initial_ramp = SubResource("GradientTexture1D_npm28")
+alpha_curve = SubResource("CurveTexture_jaokf")
+
+[node name="vfx_sleeping" type="Node2D" node_paths=PackedStringArray("_burstParticles", "_continuousParticles", "_zParticles")]
+script = ExtResource("1_eavhq")
+_burstParticles = [NodePath("vfx_common_glow")]
+_continuousParticles = [NodePath("vfx_starry_impact_small_stars"), NodePath("vfx_sleeping_z")]
+_zParticles = NodePath("vfx_sleeping_z")
+_localizedZTexture = ExtResource("2_yh2j0")
+
+[node name="vfx_common_glow" parent="." instance=ExtResource("2_2yohs")]
+self_modulate = Color(0.878661, 0.460541, 1, 1)
+lifetime = 0.35
+
+[node name="vfx_starry_impact_small_stars" parent="." instance=ExtResource("3_yh2j0")]
+self_modulate = Color(0.991938, 0.736755, 1, 1)
+emitting = true
+amount = 3
+lifetime = 1.0
+one_shot = false
+explosiveness = 0.0
+process_material = SubResource("ParticleProcessMaterial_pa3ay")
+
+[node name="vfx_sleeping_z" parent="." instance=ExtResource("4_ohipx")]
+position = Vector2(20, -20)
+

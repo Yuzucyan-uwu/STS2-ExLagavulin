@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using EXLagavulin.Core.Models.Powers;
+using Godot;
 using MegaCrit.Sts2.Core.Audio;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Ascension;
@@ -106,6 +107,13 @@ public sealed class LagavulinMatriarchAct2 : MonsterModel
 		await PowerCmd.Apply<PlatingPower>(new ThrowingPlayerChoiceContext(), base.Creature, 12m, base.Creature, null);
 		await PowerCmd.Apply<ExSleepPower>(new ThrowingPlayerChoiceContext(), base.Creature, 3m, base.Creature, null);
 		await PowerCmd.Apply<SplitPower>(new ThrowingPlayerChoiceContext(), base.Creature, 1m, base.Creature, null);
+		Marker2D marker2D = base.Creature.GetCreatureNode()?.GetSpecialNode<Marker2D>("%SleepVfxPos");
+		if (marker2D != null)
+		{
+			SleepingVfx = NSleepingVfx.Create(marker2D.GlobalPosition);
+			marker2D.AddChildSafely(SleepingVfx);
+			SleepingVfx.Position = Vector2.Zero;
+		}
 	}
 
 	public override Task AfterDamageReceived(PlayerChoiceContext choiceContext, Creature target, DamageResult result, ValueProp props, Creature? dealer, CardModel? cardSource)

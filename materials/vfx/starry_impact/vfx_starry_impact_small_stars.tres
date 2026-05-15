@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dyecnvegar1hc"]
+
+[ext_resource type="Shader" uid="uid://itf5b86p54j0" path="res://shaders/vfx/common/vfx_grayscale_particle_shader.gdshader" id="1_m50d1"]
+
+[resource]
+shader = ExtResource("1_m50d1")
+

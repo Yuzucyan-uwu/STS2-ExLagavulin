@@ -18,17 +18,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EXLagavulin.json" />
+    <Content Include="images\vfx\sleeping\localized_sleeping_z.tres" />
     <Content Include="localization\zhs\encounters.json" />
     <Content Include="localization\zhs\monsters.json" />
     <Content Include="localization\zhs\powers.json" />
+    <Content Include="materials\vfx\common\vfx_glow.tres" />
+    <Content Include="materials\vfx\sleeping\vfx_sleeping_z.tres" />
+    <Content Include="materials\vfx\starry_impact\vfx_starry_impact_small_stars.tres" />
     <Content Include="scenes\creature_visuals\lagavulin.tscn" />
     <Content Include="scenes\creature_visuals\lagavulin_matriarch_act2.tscn" />
     <Content Include="scenes\encounters\lagavulin_matriarch_act2_boss.tscn" />
+    <Content Include="scenes\vfx\common\vfx_common_glow.tscn" />
+    <Content Include="scenes\vfx\sleeping\vfx_sleeping_z.tscn" />
+    <Content Include="scenes\vfx\starry_impact\vfx_starry_impact_small_stars.tscn" />
+    <Content Include="scenes\vfx\vfx_sleeping.tscn" />
+    <Content Include="shaders\vfx\common\vfx_common_partical_shader.gdshader" />
+    <Content Include="shaders\vfx\common\vfx_grayscale_partical_shader.gdshader" />
+    <Content Include="shaders\vfx\sleeping\vfx_sleeping_z_shader.gdshader" />
+    <Content Include="shaders\vfx\_util\erosion_from_factors.gdshaderinc" />
+    <Content Include="shaders\vfx\_util\flipbook.gdshaderinc" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\map\placeholder\" />
     <Folder Include="images\monsters\" />
     <Folder Include="images\powers\" />
     <Folder Include="images\ui\run_history\" />
+    <Folder Include="images\vfx\common\" />
+    <Folder Include="images\vfx\starry_impact\" />
   </ItemGroup>
 </Project>

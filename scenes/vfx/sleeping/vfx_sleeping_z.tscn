@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://h3cji8pg5fac"]
+
+[ext_resource type="Material" uid="uid://cwxumlutnpmy2" path="res://materials/vfx/sleeping/vfx_sleeping_z.tres" id="1_g2nwy"]
+[ext_resource type="Texture2D" uid="uid://y5qfr755fhn8" path="res://images/vfx/sleeping/sleeping_z_eng.png" id="2_fwj70"]
+
+[sub_resource type="Curve" id="Curve_km08i"]
+_data = [Vector2(0.498765, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.88162, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_r3do5"]
+curve = SubResource("Curve_km08i")
+
+[sub_resource type="Gradient" id="Gradient_pa3ay"]
+colors = PackedColorArray(1, 0.730178, 0.982794, 1, 1, 0.532883, 0.970212, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8pyfw"]
+gradient = SubResource("Gradient_pa3ay")
+
+[sub_resource type="Gradient" id="Gradient_3o76e"]
+offsets = PackedFloat32Array(0, 0.294278)
+colors = PackedColorArray(1.25, 1.25, 1.25, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vcpbd"]
+gradient = SubResource("Gradient_3o76e")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_bg52b"]
+_data = [Vector2(0, 0.501825), 0.0, 2.40192, 0, 0, Vector2(0.501235, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8k3et"]
+curve = SubResource("Curve_bg52b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n2edx"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector3(0.5, -1, 0)
+spread = 5.0
+initial_velocity_min = 120.0
+initial_velocity_max = 140.0
+gravity = Vector3(0, 0, 0)
+damping_min = 0.04
+damping_max = 0.04
+scale_min = 0.55
+scale_max = 0.65
+scale_curve = SubResource("CurveTexture_8k3et")
+color_ramp = SubResource("GradientTexture1D_vcpbd")
+color_initial_ramp = SubResource("GradientTexture1D_8pyfw")
+alpha_curve = SubResource("CurveTexture_r3do5")
+anim_offset_max = 1.0
+
+[node name="vfx_sleeping_z" type="GPUParticles2D"]
+z_index = 2
+texture_repeat = 2
+material = ExtResource("1_g2nwy")
+amount = 4
+texture = ExtResource("2_fwj70")
+lifetime = 4.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_n2edx")

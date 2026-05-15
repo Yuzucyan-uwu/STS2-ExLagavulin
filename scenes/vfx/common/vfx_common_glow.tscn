@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyeldmdx1sdql"]
+
+[ext_resource type="Material" uid="uid://buimjwpet3sr3" path="res://materials/vfx/common/vfx_glow.tres" id="1_kkssq"]
+[ext_resource type="Texture2D" uid="uid://dltmdulxe1avi" path="res://images/vfx/common/common_glow.png" id="2_gdhjp"]
+
+[sub_resource type="Curve" id="Curve_l02co"]
+_data = [Vector2(0, 0.353316), 0.0, -0.753348, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ike7h"]
+curve = SubResource("Curve_l02co")
+
+[sub_resource type="Curve" id="Curve_2gmb7"]
+_data = [Vector2(0, 0), 0.0, 11.5422, 0, 0, Vector2(0.203175, 0.842474), 0.0, 0.210613, 0, 0, Vector2(1, 1), 0.197691, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_21kn2"]
+curve = SubResource("Curve_2gmb7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vo6g6"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_21kn2")
+alpha_curve = SubResource("CurveTexture_ike7h")
+
+[node name="vfx_common_glow" type="GPUParticles2D"]
+material = ExtResource("1_kkssq")
+emitting = false
+amount = 1
+texture = ExtResource("2_gdhjp")
+one_shot = true
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_vo6g6")
